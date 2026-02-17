@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Magazin Online</title>
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    text-align:center;
+}
+
+header {
+    background:#1e90ff;
+    color:white;
+    padding:20px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:20px;
+}
+
+.product {
+    background:white;
+    margin:15px;
+    padding:15px;
+    border-radius:15px;
+    width:200px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.product:hover {
+    transform:scale(1.05);
+}
+
+.product img {
+    width:100%;
+    border-radius:10px;
+}
+
+button {
+    margin-top:10px;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    background:#ffcc00;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover {
+    background:#ffaa00;
+}
+
+#cart {
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#1e90ff;
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<header>
+🛒 Magazin Online Simplu
+</header>
+
+<div id="cart">Coș: 0 produse</div>
+
+<div class="container">
+
+<div class="product">
+<img src="https://picsum.photos/200/150?1" alt="Produs 1">
+<h3>Tricou Cool</h3>
+<p>Preț: 50 RON</p>
+<button onclick="adaugaInCos()">Adaugă în coș</button>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/200/150?2" alt="Produs 2">
+<h3>Șapcă Sport</h3>
+<p>Preț: 30 RON</p>
+<button onclick="adaugaInCos()">Adaugă în coș</button>
+</div>
+
+<div class="product">
+<img src="https://picsum.photos/200/150?3" alt="Produs 3">
+<h3>Geacă Modernă</h3>
+<p>Preț: 120 RON</p>
+<button onclick="adaugaInCos()">Adaugă în coș</button>
+</div>
+
+</div>
+
+<script>
+let cos = 0;
+
+function adaugaInCos() {
+    cos++;
+    document.getElementById('cart').innerText = `Coș: ${cos} produse`;
+}
+</script>
+
+</body>
+</html>
